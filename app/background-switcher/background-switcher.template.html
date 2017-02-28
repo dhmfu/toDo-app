@@ -1,17 +1,7 @@
-<!-- <ul> -->
-  <!-- <li ng-repeat="background in $ctrl.backgrounds"> -->
-    <!-- {{background.url}} -->
-  <!-- </li> -->
-<!-- </ul> -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-3" ng-repeat="background in $ctrl.backgrounds" ng-click="$ctrl.setBackground(background.url)">
-      <div class="thumbnail">
-        <img ng-src="{{background.url}}" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum...</p>
-        </div>
-      </div>
+<div class="row background-switcher">
+  <div class="col-md-3" ng-repeat="background in $ctrl.backgrounds" ng-click="$ctrl.setBackground(background.url)">
+    <div class="thumbnail">
+      <img ng-src="{{background.url}}" style="width:100%">
     </div>
   </div>
 </div>

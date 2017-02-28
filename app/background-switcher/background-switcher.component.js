@@ -6,7 +6,7 @@ angular.
   component('bgSwitch', {
     templateUrl: 'background-switcher/background-switcher.template.html',
     controller: function bgSwitchController($http, $rootScope) {
-      $rootScope.mainBackgroundUrl = 'img/backgrounds/elitefon.ru_28513.jpg';
+      $rootScope.mainBackgroundUrl = 'img/backgrounds/landscape-nature-sunset-trees_C2bOWoK.jpg';
       var self = this;
 
       self.setBackground = function setBackground(source) {
