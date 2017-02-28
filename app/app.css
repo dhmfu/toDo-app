@@ -4,8 +4,33 @@ body{
 
 .background-switcher{
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 2%;
+  right: 2%;
+  width: 70%;
+  height: 111px;
+}
+
+.background-switcher > .row{
   margin: 0;
-  width: 50%;
+  display: inline-block;
+  width: 92%;
+}
+
+.background-switcher .thumbnail{
+  margin-bottom: 0;
+}
+
+.btn-circle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  font-size: 24px;
+  line-height: 70px;
+  padding: 0;
+  padding-left: 2px;
+  border-radius: 35px;
 }
