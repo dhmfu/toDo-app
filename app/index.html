@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" ng-app="toDoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do list</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="mainController">
+    <input ng-model="class">
+    <p ng-class="class">
+      {{test}}
+    </p>
+  </body>
+</html>
