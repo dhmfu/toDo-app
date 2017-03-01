@@ -1,0 +1,17 @@
+.background-switcher > .row.ng-enter {
+  transition:0.5s linear all;
+  width: 0;
+}
+
+.background-switcher > .row.ng-enter.ng-enter-active {
+  width: 92%;
+}
+
+.background-switcher > .row.ng-leave {
+  transition:0.5s linear all;
+  width: 92%;
+}
+
+.background-switcher > .row.ng-leave.ng-leave-active {
+  width: 0;
+}
