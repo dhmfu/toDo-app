@@ -5,6 +5,8 @@
     <title>To-Do list</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="background-switcher/background-switcher.css" />
+    <link rel="stylesheet" href="todo-list/todo-list.css" />
     <link rel="stylesheet" href="animation.css" />
 
     <script src="bower_components/angular/angular.js"></script>
@@ -12,8 +14,11 @@
     <script src="app.module.js"></script>
     <script src="background-switcher/background-switcher.module.js"></script>
     <script src="background-switcher/background-switcher.component.js"></script>
+    <script src="todo-list/todo-list.module.js"></script>
+    <script src="todo-list/todo-list.component.js"></script>
   </head>
   <body ng-style="{'background-image':'url('+mainBackgroundUrl+')'}">
     <bg-switch></bg-switch>
+    <todo-list></todo-list>
   </body>
 </html>
