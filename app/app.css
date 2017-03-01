@@ -14,10 +14,14 @@ body{
   margin: 0;
   display: inline-block;
   width: 92%;
+  height: 111px;
+  float: right;
 }
 
 .background-switcher .thumbnail{
   margin-bottom: 0;
+  cursor: pointer;
+  height: 111px;
 }
 
 .btn-circle {
