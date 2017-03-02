@@ -20,9 +20,10 @@ angular.
         }
       ];
 
-      this.addTask = function(task) {
-        task.completed = false;
-        this.tasks.push(task);
+      this.addTask = function() {
+        this.currentTask.completed = false;
+        this.currentTask.priority = this.currentTask.priority || 'Low';
+        this.tasks.push(this.currentTask);
         this.currentTask = {};
       };
 
