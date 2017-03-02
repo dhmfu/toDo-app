@@ -41,5 +41,9 @@ angular.
           task.completed = true;
         });
       };
+
+      this.remove = function(task) {
+        this.tasks.splice(this.tasks.indexOf(task),1);
+      };
     }
   });
