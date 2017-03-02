@@ -35,5 +35,11 @@ angular.
         }
         this.tasks = temp;
       };
+
+      this.selectAll = function() {
+        this.tasks.forEach(function(task) {
+          task.completed = true;
+        });
+      };
     }
   });
