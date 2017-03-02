@@ -1,0 +1,19 @@
+<div class="todo-list">
+  <div ng-repeat="task in $ctrl.tasks">
+    <div>
+      {{task.desription}}
+    </div>
+    <div>
+      {{task.priority}}
+    </div>
+    <div>
+      {{task.done}}
+    </div>
+  </div>
+  <form name="taskForm" ng-submit="$ctrl.addTask($ctrl.currentTask)">
+    <select ng-model="$ctrl.currentTask.priority" ng-options="priority for priority in ['High', 'Low']">
+      <option value="">Select the priority</option>
+    </select>
+    <input ng-model="$ctrl.currentTask.desription">
+  </form>
+</div>

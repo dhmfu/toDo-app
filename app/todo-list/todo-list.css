@@ -1,0 +1,10 @@
+.todo-list{
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100px;
+  width: 40%;
+  margin: auto;
+  background-color: #f3f3f3;
+}
