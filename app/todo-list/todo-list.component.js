@@ -4,36 +4,29 @@ angular.
   module('todoList').
   component('todoList', {
     templateUrl: 'todo-list/todo-list.template.html',
-    controller: function todoListController() {
-      this.currentTask = {};
+    controller: function todoListController($http) {
+      var self = this;
 
-      this.tasks=[
-        {
-          desription: 'lorem ipsum dolar',
-          priority: 'High',
-          completed: false
-        },
-        {
-          desription: 'lodar ipsum lorem',
-          priority: 'Low',
-          completed: false
-        }
-      ];
+      $http.get('todo-list/data/tasks.json').then(function(response) {
+        self.tasks = response.data;
+      });
+
+      this.newTask = {
+        priority: 'Low'
+      };
 
       this.addTask = function() {
-        this.currentTask.completed = false;
-        this.currentTask.priority = this.currentTask.priority || 'Low';
-        this.tasks.push(this.currentTask);
-        this.currentTask = {};
+        this.newTask.completed = false;
+        this.tasks.push(this.newTask);
+        this.newTask = {
+          priority: 'Low'
+        };
       };
 
       this.removeCompleted = function() {
-        var temp = [];
-        for (var i = 0; i < this.tasks.length; i++) {
-          if(!this.tasks[i].completed)
-            temp.push(this.tasks[i]);
-        }
-        this.tasks = temp;
+        this.tasks = this.tasks.filter(function(task) {
+          return !task.completed;
+        });
       };
 
       this.selectAll = function() {

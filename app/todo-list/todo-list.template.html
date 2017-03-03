@@ -1,25 +1,25 @@
 <div class="todo-list">
   <div class="well" ng-repeat="task in $ctrl.tasks">
-    <div>
-      {{task.desription}}
-    </div>
-    <div>
-      {{task.priority}}
-    </div>
-    <div>
-      {{task.completed}} <input type="checkbox" ng-model="task.completed">
-    </div>
-    <div>
       <button type="button" class="pull-right" ng-click="$ctrl.remove(task)">Delete</button>
+    <div>
+      <span ng-bind="task.desription"></span>
+    </div>
+    <div>
+      Priority: {{task.priority}}
+    </div>
+    <div>
+      Completed: {{task.completed}} <input type="checkbox" ng-model="task.completed">
     </div>
   </div>
   <div>
     <button type="button" ng-click="$ctrl.removeCompleted()">Remove completed</button> <button type="button" ng-click="$ctrl.selectAll()">Select all</button>
   </div>
-  <form name="taskForm" ng-submit="$ctrl.addTask()">
-    <select ng-model="$ctrl.currentTask.priority" ng-options="priority for priority in ['High', 'Low']">
-      <option value="">Select the priority</option>
+  <form name="taskForm" ng-submit="taskForm.$valid && $ctrl.addTask()" novalidate>
+    <select ng-model="$ctrl.newTask.priority">
+      <option value="Low">Low</option>
+      <option value="High">High</option>
     </select>
-    <input ng-model="$ctrl.currentTask.desription" placeholder="Write your task">
+    <input ng-model="$ctrl.newTask.desription" placeholder="Write your task" required>
+    <button type="submit" ng-if="$ctrl.newTask.desription">Submit</button>
   </form>
 </div>
