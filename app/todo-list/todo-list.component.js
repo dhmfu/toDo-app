@@ -7,6 +7,8 @@ angular.
     controller: function todoListController($http) {
       var self = this;
 
+      this.tasks = [];
+
       $http.get('todo-list/data/tasks.json').then(function(response) {
         self.tasks = response.data;
       });
@@ -30,13 +32,29 @@ angular.
       };
 
       this.selectAll = function() {
-        this.tasks.forEach(function(task) {
-          task.completed = !task.completed;
-        });
+        if (this.completedTasks() == this.tasks.length)
+          this.tasks.forEach(function(task) {
+            task.completed = false;
+          });
+        else
+          this.tasks.forEach(function(task) {
+            task.completed = true;
+          });
       };
 
       this.remove = function(task) {
         this.tasks.splice(this.tasks.indexOf(task),1);
       };
+
+      this.completedTasks = function() {
+        return this.tasks.filter(function(task) {
+          return task.completed;
+        }).length;
+      };
+
+      this.selectAll_button = function() {
+        return (this.completedTasks() != this.tasks.length ? 'Select' : 'Unselect') + ' all';
+      }
+
     }
   });

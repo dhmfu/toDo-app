@@ -9,17 +9,25 @@
     </div>
     <button type="submit" ng-if="$ctrl.newTask.desription" class="task-add"></button>
   </form>
-  <div class="task" ng-repeat="task in $ctrl.tasks" ng-init="showRemove=false" ng-mouseenter="showRemove=true" ng-mouseleave="showRemove=false">
-    <div class="task-complete">
-      <input type="checkbox" ng-model="task.completed">
-    </div>
-    <span class="remove" ng-click="$ctrl.remove(task)" ng-if="showRemove"></span>
-    <div class="task-description">
-      <span ng-bind="task.desription" title="double-click to edit" class="description" ng-class="{'task-completed' : task.completed}"></span>
-      <span class="label label-default" ng-class="{'label-danger' : (task.priority == 'High' && !task.completed), 'label-success' : (task.priority == 'Low' && !task.completed)}">{{task.priority}}</span>
-    </div>
-  </div>
   <div>
-    <button type="button" ng-click="$ctrl.removeCompleted()">Remove completed</button> <button type="button" ng-click="$ctrl.selectAll()">Select all</button>
+    <div class="task" ng-repeat="task in $ctrl.tasks" ng-init="showRemove=false" ng-mouseenter="showRemove=true" ng-mouseleave="showRemove=false">
+      <div class="task-complete">
+        <input type="checkbox" ng-model="task.completed">
+      </div>
+      <span class="remove" ng-click="$ctrl.remove(task)" ng-if="showRemove"></span>
+      <div class="task-description">
+        <span ng-bind="task.desription" title="double-click to edit" class="description" ng-class="{'task-completed' : task.completed}"></span>
+        <span class="label label-default" ng-class="{'label-danger' : (task.priority == 'High' && !task.completed), 'label-success' : (task.priority == 'Low' && !task.completed)}" ng-bind="task.priority"></span>
+      </div>
+    </div>  
+  </div>
+  <div ng-if="$ctrl.tasks.length">
+    <div class="info">
+      <span ng-bind="$ctrl.completedTasks()"></span> of <span ng-bind="$ctrl.tasks.length"></span> tasks completed
+    </div>
+    <div class="button-footer">
+      <button type="button" ng-click="$ctrl.selectAll()" class="btn btn-default pull-right" ng-bind="$ctrl.selectAll_button()"></button>
+      <button type="button" ng-click="$ctrl.removeCompleted()" ng-if="$ctrl.completedTasks()" class="btn btn-default pull-left">Remove completed</button>
+    </div>
   </div>
 </div>
