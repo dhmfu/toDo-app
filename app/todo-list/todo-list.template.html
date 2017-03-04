@@ -1,25 +1,25 @@
 <div class="todo-list">
-  <div class="well" ng-repeat="task in $ctrl.tasks">
-      <button type="button" class="pull-right" ng-click="$ctrl.remove(task)">Delete</button>
-    <div>
-      <span ng-bind="task.desription"></span>
+  <form name="taskForm" ng-submit="taskForm.$valid && $ctrl.addTask()" novalidate>
+    <div class="task-details">
+      <input ng-model="$ctrl.newTask.desription" placeholder="Write down your task" autofocus required>
+      <select ng-model="$ctrl.newTask.priority" class="label" ng-class="{'label-danger' : $ctrl.newTask.priority == 'High', 'label-success' : $ctrl.newTask.priority == 'Low'}">
+        <option value="Low" class="label-success">Low</option>
+        <option value="High" class="label-danger">High</option>
+      </select>
     </div>
-    <div>
-      Priority: {{task.priority}}
+    <button type="submit" ng-if="$ctrl.newTask.desription" class="task-add"></button>
+  </form>
+  <div class="task" ng-repeat="task in $ctrl.tasks" ng-init="showRemove=false" ng-mouseenter="showRemove=true" ng-mouseleave="showRemove=false">
+    <div class="task-complete">
+      <input type="checkbox" ng-model="task.completed">
     </div>
-    <div>
-      Completed: {{task.completed}} <input type="checkbox" ng-model="task.completed">
+    <span class="remove" ng-click="$ctrl.remove(task)" ng-if="showRemove"></span>
+    <div class="task-description">
+      <span ng-bind="task.desription" title="double-click to edit" class="description" ng-class="{'task-completed' : task.completed}"></span>
+      <span class="label label-default" ng-class="{'label-danger' : (task.priority == 'High' && !task.completed), 'label-success' : (task.priority == 'Low' && !task.completed)}">{{task.priority}}</span>
     </div>
   </div>
   <div>
     <button type="button" ng-click="$ctrl.removeCompleted()">Remove completed</button> <button type="button" ng-click="$ctrl.selectAll()">Select all</button>
   </div>
-  <form name="taskForm" ng-submit="taskForm.$valid && $ctrl.addTask()" novalidate>
-    <select ng-model="$ctrl.newTask.priority">
-      <option value="Low">Low</option>
-      <option value="High">High</option>
-    </select>
-    <input ng-model="$ctrl.newTask.desription" placeholder="Write your task" required>
-    <button type="submit" ng-if="$ctrl.newTask.desription">Submit</button>
-  </form>
 </div>

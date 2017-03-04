@@ -31,7 +31,7 @@ angular.
 
       this.selectAll = function() {
         this.tasks.forEach(function(task) {
-          task.completed = true;
+          task.completed = !task.completed;
         });
       };
 
