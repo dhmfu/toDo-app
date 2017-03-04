@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('toDoApp', ['bgSwitch']);
+angular.module('toDoApp', ['bgSwitch', 'todoList']);
