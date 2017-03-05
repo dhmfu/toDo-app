@@ -2,6 +2,7 @@
   <form name="taskForm" ng-submit="taskForm.$valid && $ctrl.addTask()" novalidate>
     <div class="task-details">
       <input ng-model="$ctrl.newTask.desription" placeholder="Write down your task" autofocus required>
+      <div class="input-error">Task can't be empty</div>
       <select ng-model="$ctrl.newTask.priority" class="label" ng-class="{'label-danger' : $ctrl.newTask.priority == 'High', 'label-success' : $ctrl.newTask.priority == 'Low'}">
         <option value="Low" class="label-success">Low</option>
         <option value="High" class="label-danger">High</option>
@@ -19,7 +20,7 @@
         <span ng-bind="task.desription" title="double-click to edit" class="description" ng-class="{'task-completed' : task.completed}"></span>
         <span class="label label-default" ng-class="{'label-danger' : (task.priority == 'High' && !task.completed), 'label-success' : (task.priority == 'Low' && !task.completed)}" ng-bind="task.priority"></span>
       </div>
-    </div>  
+    </div>
   </div>
   <div ng-if="$ctrl.tasks.length">
     <div class="info">
