@@ -56,5 +56,10 @@ angular.
         return (this.completedTasks() != this.tasks.length ? 'Select' : 'Unselect') + ' all';
       }
 
+      this.editTask = function() {
+        // $('.task-view').toggleClass('task-edit');
+        alert('alo blya');
+      }
+
     }
   });

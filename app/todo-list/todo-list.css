@@ -66,7 +66,7 @@
 
 .task-description{
   font-size: 20px;
-  margin-left: 30px;
+  margin-left: 35px;
   margin-right: 30px;
   position: relative;
 }
@@ -76,7 +76,6 @@
   word-wrap: break-word;
   margin-right: 55px;
   font-size: 25px;
-  margin-left: 5px;
 }
 
 .remove, .task-add{
@@ -121,7 +120,7 @@
   outline: 0;
 }
 
-.task-description .label{
+.task-description span.label{
   position: absolute;
   right: 0;
   top: 0;
