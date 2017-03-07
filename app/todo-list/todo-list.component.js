@@ -54,12 +54,15 @@ angular.
 
       this.selectAll_button = function() {
         return (this.completedTasks() != this.tasks.length ? 'Select' : 'Unselect') + ' all';
-      }
+      };
 
-      this.editTask = function() {
-        // $('.task-view').toggleClass('task-edit');
-        alert('alo blya');
-      }
+      this.acceptEdit = function(task, $event) {
+        if ($event.keyCode == 13 || $event.type == 'click') {
+          task.editing = false;
+          if (!task.desription)
+            this.remove(task);
+        }
+      };
 
     }
   });
