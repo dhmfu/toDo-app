@@ -42,7 +42,7 @@ angular.
           });
       };
 
-      this.remove = function(task) {
+      this.taskRemove = function(task) {
         this.tasks.splice(this.tasks.indexOf(task),1);
       };
 
@@ -59,9 +59,14 @@ angular.
       this.acceptEdit = function(task, $event) {
         if ($event.keyCode == 13 || $event.type == 'click') {
           task.editing = false;
-          if (!task.desription)
-            this.remove(task);
+          if (!task.description)
+            this.taskRemove(task);
         }
+      };
+
+      this.determinePriority = function(task) {
+        if (!task.completed)
+          return (task.priority == 'High') ? 'label-danger' : 'label-success';
       };
 
     }

@@ -78,7 +78,7 @@
   font-size: 25px;
 }
 
-.remove, .task-add{
+.task-remove, .task-add{
   display: block;
   position: absolute;
   top: 0;
@@ -89,7 +89,7 @@
   height: 30px;
 }
 
-.remove::before, .task-add::before{
+.task-remove::before, .task-add::before{
   content: '\00D7';
   font-size: 40px;
   position: absolute;
@@ -101,7 +101,7 @@
   width: 30px;
 }
 
-.remove:hover, .task-add:hover{
+.task-remove:hover, .task-add:hover{
   opacity: 0.7;
 }
 
