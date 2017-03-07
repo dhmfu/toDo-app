@@ -1,25 +1,34 @@
 <div class="todo-list">
   <form name="taskForm" ng-submit="taskForm.$valid && $ctrl.addTask()" novalidate>
     <div class="task-details">
-      <input ng-model="$ctrl.newTask.desription" placeholder="Write down your task" autofocus required>
-      <select ng-model="$ctrl.newTask.priority" class="label" ng-class="{'label-danger' : $ctrl.newTask.priority == 'High', 'label-success' : $ctrl.newTask.priority == 'Low'}">
+      <input ng-model="$ctrl.newTask.description" placeholder="Write down your task" autofocus required>
+      <div class="input-error">Task can't be empty</div>
+      <select ng-model="$ctrl.newTask.priority" class="label" ng-class="$ctrl.determinePriority($ctrl.newTask)">
         <option value="Low" class="label-success">Low</option>
         <option value="High" class="label-danger">High</option>
       </select>
     </div>
-    <button type="submit" ng-if="$ctrl.newTask.desription" class="task-add"></button>
+    <button type="submit" ng-if="$ctrl.newTask.description" class="task-add"></button>
   </form>
   <div>
-    <div class="task" ng-repeat="task in $ctrl.tasks" ng-init="showRemove=false" ng-mouseenter="showRemove=true" ng-mouseleave="showRemove=false">
-      <div class="task-complete">
+    <div class="task" ng-repeat="task in $ctrl.tasks" ng-init="showRemove=false; task.editing = false" ng-mouseenter="showRemove=true" ng-mouseleave="showRemove=false">
+      <div class="task-complete" ng-if="!task.editing">
         <input type="checkbox" ng-model="task.completed">
       </div>
-      <span class="remove" ng-click="$ctrl.remove(task)" ng-if="showRemove"></span>
-      <div class="task-description">
-        <span ng-bind="task.desription" title="double-click to edit" class="description" ng-class="{'task-completed' : task.completed}"></span>
-        <span class="label label-default" ng-class="{'label-danger' : (task.priority == 'High' && !task.completed), 'label-success' : (task.priority == 'Low' && !task.completed)}" ng-bind="task.priority"></span>
+      <div class="task-description" title="double-click to edit" ng-dblclick="!task.completed && (task.editing = !task.editing)" ng-if="!task.editing">
+        <span ng-bind="task.description" class="description" ng-class="{'task-completed' : task.completed}"></span>
+        <span class="label label-default" ng-class="$ctrl.determinePriority(task)" ng-bind="task.priority"></span>
       </div>
-    </div>  
+      <span class="task-remove" ng-click="$ctrl.taskRemove(task)" ng-if="showRemove && !task.editing"></span>
+      <div class="task-edit" ng-if="task.editing">
+        <input ng-model="task.description" ng-keyup="$ctrl.acceptEdit(task, $event)">
+        <select ng-model="task.priority" class="label" ng-class="$ctrl.determinePriority(task)">
+          <option value="Low" class="label-success">Low</option>
+          <option value="High" class="label-danger">High</option>
+        </select>
+      </div>
+      <button ng-if="task.editing" ng-click="$ctrl.acceptEdit(task, $event)" class="task-add"></button>
+    </div>
   </div>
   <div ng-if="$ctrl.tasks.length">
     <div class="info">

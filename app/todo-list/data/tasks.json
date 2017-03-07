@@ -1,10 +1,10 @@
 [{
-  "desription": "lorem ipsum dolar",
+  "description": "lorem ipsum dolar",
   "priority": "High",
   "completed": false
 },
 {
-  "desription": "lodar ipsum lorem",
+  "description": "lodar ipsum lorem",
   "priority": "Low",
   "completed": false
 }]
