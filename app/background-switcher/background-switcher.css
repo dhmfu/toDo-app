@@ -7,6 +7,7 @@
 
 .background-switcher .thumbnail{
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .btn-circle {

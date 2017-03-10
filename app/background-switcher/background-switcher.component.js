@@ -20,7 +20,6 @@ angular.
       $http.get('img/backgrounds.json').then(function(response) {
         self.backgrounds = response.data;
         $rootScope.mainBackgroundUrl = self.backgrounds[Math.floor(Math.random() * 4)].url;
-        console.log(self.backgrounds[Math.floor(Math.random() * 4)].url);
       });
     }
   });
