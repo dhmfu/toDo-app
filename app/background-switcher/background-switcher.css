@@ -1,29 +1,18 @@
 .background-switcher{
   position: absolute;
-  bottom: 2%;
-  right: 2%;
+  top: 1%;
+  left: 1%;
   width: 70%;
-  height: 111px;
-  overflow: hidden;
-}
-
-.background-switcher > .row{
-  margin: 0;
-  display: inline-block;
-  width: 92%;
-  height: 111px;
-  float: right;
 }
 
 .background-switcher .thumbnail{
-  margin-bottom: 0;
+  margin-bottom: 10px;
   cursor: pointer;
-  height: 111px;
 }
 
 .btn-circle {
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .btn-circle.btn-xl {

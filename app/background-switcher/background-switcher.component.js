@@ -5,21 +5,21 @@ angular.
   component('bgSwitch', {
     templateUrl: 'background-switcher/background-switcher.template.html',
     controller: function bgSwitchController($http, $rootScope) {
-      $rootScope.mainBackgroundUrl = 'img/backgrounds/landscape-nature-sunset-trees_C2bOWoK.jpg';
-      var self = this;
+      this.isShown = false;
 
-      self.isShown = false;
-
-      self.setBackground = function setBackground(source) {
+      this.setBackground = function setBackground(source) {
         $rootScope.mainBackgroundUrl = source;
       }
 
-      self.toggleMenu = function toggleMenu() {
-        self.isShown=!self.isShown;
+      this.toggleMenu = function toggleMenu() {
+        this.isShown=!self.isShown;
       }
+
+      var self = this;
 
       $http.get('img/backgrounds.json').then(function(response) {
         self.backgrounds = response.data;
+        $rootScope.mainBackgroundUrl = self.backgrounds[Math.floor(Math.random() * 4)].url;
       });
     }
   });
