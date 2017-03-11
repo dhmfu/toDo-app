@@ -7,6 +7,9 @@ angular.
         when('/todo-list', {
           template: '<todo-list></todo-list>'
         }).
+        when('/about', {
+          templateUrl: 'about.html'
+        }).
         otherwise('/todo-list');
     }
   ]);

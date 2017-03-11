@@ -1,3 +1,18 @@
 body{
   background-size: cover;
 }
+
+.content{
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
