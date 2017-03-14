@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="todo-list/todo-list.css" />
 
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
     <script src="background-switcher/background-switcher.module.js"></script>
     <script src="background-switcher/background-switcher.component.js"></script>
     <script src="todo-list/todo-list.module.js"></script>
@@ -18,6 +19,20 @@
   </head>
   <body ng-style="{'background-image':'url('+mainBackgroundUrl+')'}">
     <bg-switch></bg-switch>
-    <todo-list></todo-list>
+    <nav class="navbar navbar-default" ng-controller="NavbarController as navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Todo-App</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li ng-class="navbar.isActive('todo-list')"><a href="#todo-list">Todo-list</a></li>
+            <li ng-class="navbar.isActive('about')"><a href="#about">About</a></li>
+            <li ng-class="navbar.isActive('home')"><a href="#">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="content" ng-view></div>
   </body>
 </html>

@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('bgSwitch', ['ngAnimate']);
+angular.module('bgSwitch', []);

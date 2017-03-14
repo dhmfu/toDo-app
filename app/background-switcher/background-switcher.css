@@ -1,13 +1,21 @@
 .background-switcher{
   position: absolute;
-  top: 1%;
+  top: 60px;
   left: 1%;
   width: 70%;
 }
 
 .background-switcher .thumbnail{
+  margin-bottom: 0;
+}
+
+.background-switcher .row{
   margin-bottom: 10px;
   cursor: pointer;
+}
+
+.background-switcher .row:last-child{
+  margin-bottom: 0;
 }
 
 .btn-circle {

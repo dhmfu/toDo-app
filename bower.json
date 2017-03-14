@@ -1,14 +1,15 @@
 {
-  "name": "angular-phonecat",
-  "description": "A starter project for AngularJS",
+  "name": "todo-list",
+  "description": " ",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-phonecat",
+  "homepage": "https://github.com/dhmfu/toDo-app",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "angular": "1.5.x",
     "angular-mocks": "1.5.x",
     "bootstrap": "3.3.x",
-    "angular-animate": "1.5.x"
+    "angular-animate": "1.5.x",
+    "angular-route": "1.5.x"
   }
 }
