@@ -1,11 +1,11 @@
 .task{
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #eee;
   position: relative;
   padding: 10px 5px;
 }
 
 .task:first-child{
-  border-top: 1px solid grey;
+  border-top: 1px solid #eee;
 }
 
 .task-complete{
@@ -17,7 +17,7 @@
   width: 30px;
   height: 30px;
   border-radius: 15px;
-  border: 1px solid grey;
+  border: 1px solid #eee;
 }
 
 .task-complete > input{
@@ -116,7 +116,7 @@
 
 .task-completed{
   text-decoration: line-through;
-  color: grey;
+  color: #eee;
   font-style: italic;
 }
 
@@ -157,7 +157,7 @@ form .label{
   text-align: center;
   font-size: 18px;
   padding: 10px 0;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #eee;
 }
 
 .info span{
@@ -195,8 +195,8 @@ form.ng-dirty.ng-invalid .input-error{
   padding-right: 80px;
   width: 100%;
   font-style: italic;
-  color: grey;
-  border-bottom: 1px solid grey;
+  color: #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .task-edit input:focus{
