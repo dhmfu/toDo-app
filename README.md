@@ -2,8 +2,15 @@
 
 Application for personal time-management.
 
-## Installation
+## Note
 
+### In order to install this application following are required:
+
+* Git
+* Node.js
+* Bower
+
+## Installation
 First get the app from repo
 
 ```
@@ -28,6 +35,6 @@ npm start
 
 Then open your browser and navigate to [localhost:8000](http://localhost:8000/).
 
-## Annotation
+## License
 
-For bootstrapping this project I used [angular-phonecat project](https://github.com/angular/angular-phonecat) instead of [angular-seed project](https://github.com/angular/angular-seed), because i found it more convenient to manipulate.
+Standart MIT license
