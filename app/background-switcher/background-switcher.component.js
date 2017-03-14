@@ -17,7 +17,7 @@ angular.
 
       var self = this;
 
-      $http.get('img/backgrounds.json').then(function(response) {
+      $http.get('background-switcher/data/backgrounds.json').then(function(response) {
         self.backgrounds = response.data;
         $rootScope.mainBackgroundUrl = self.backgrounds[Math.floor(Math.random() * 4)].url;
       });

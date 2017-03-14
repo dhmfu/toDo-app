@@ -1,9 +1,9 @@
 {
-  "name": "angular-phonecat",
+  "name": "todo-application",
   "private": true,
-  "version": "0.0.0",
-  "description": "A tutorial application for AngularJS",
-  "repository": "https://github.com/angular/angular-phonecat",
+  "version": "0.9.0",
+  "description": "Todo application",
+  "repository": "https://github.com/dhmfu/toDo-app",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
