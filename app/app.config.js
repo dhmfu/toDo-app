@@ -10,6 +10,9 @@ angular.
         when('/about', {
           templateUrl: 'about.html'
         }).
-        otherwise('/todo-list');
+        when('/home', {
+          templateUrl: 'welcome.html'
+        }).
+        otherwise('/home');
     }
   ]);
