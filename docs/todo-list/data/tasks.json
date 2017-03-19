@@ -1,10 +1,10 @@
 [{
-  "description": "lorem ipsum dolar",
-  "priority": "High",
-  "completed": false
+  "description": "Make a todo-application",
+  "priority": "Low",
+  "completed": true
 },
 {
-  "description": "lodar ipsum lorem",
-  "priority": "Low",
+  "description": "Get a job",
+  "priority": "High",
   "completed": false
 }]
