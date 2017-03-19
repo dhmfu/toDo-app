@@ -195,7 +195,7 @@ form.ng-dirty.ng-invalid .input-error{
   padding-right: 80px;
   width: 100%;
   font-style: italic;
-  color: #eee;
+  color: grey;
   border-bottom: 1px solid #eee;
 }
 
