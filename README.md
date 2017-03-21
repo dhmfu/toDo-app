@@ -35,6 +35,10 @@ npm start
 
 Then open your browser and navigate to [localhost:8000](http://localhost:8000/).
 
+## Demo
+
+Demo is available [here](https://dhmfu.github.io/todo-app).
+
 ## License
 
 Standart MIT license
