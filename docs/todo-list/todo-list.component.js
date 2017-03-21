@@ -56,6 +56,10 @@ angular.
         return (this.completedTasks() != this.tasks.length ? 'Select' : 'Unselect') + ' all';
       };
 
+      this.select_button = function(task) {
+        return (!task.completed ? 'Select' : 'Unselect');
+      };
+
       this.acceptEdit = function(task, $event) {
         if ($event.keyCode == 13 || $event.type == 'click') {
           task.editing = false;
@@ -66,7 +70,7 @@ angular.
 
       this.determinePriority = function(task) {
         if (!task.completed)
-          return (task.priority == 'High') ? 'label-danger' : 'label-success';
+          return (task.priority == 'High') ? 'label-warning' : 'label-success';
       };
 
     }

@@ -74,4 +74,23 @@
   .task-complete-mobile{
     display: inline-block;
   }
+
+  .task-edit{
+    margin: 0;
+  }
+
+  .task-edit .label{
+    position: relative;
+  }
+
+  .task-edit input{
+    padding: 0;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+  .button-footer .btn{
+    font-size: 13px;
+  }
 }

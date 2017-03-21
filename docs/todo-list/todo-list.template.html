@@ -4,7 +4,7 @@
       <div class="input-error">Task can't be empty</div>
       <select ng-model="$ctrl.newTask.priority" class="label" ng-class="$ctrl.determinePriority($ctrl.newTask)">
         <option value="Low" class="label-success">Low</option>
-        <option value="High" class="label-danger">High</option>
+        <option value="High" class="label-warning">High</option>
       </select>
       <button type="submit" class="btn btn-success pull-right task-add-mobile" ng-if="$ctrl.newTask.description">Submit</button>
     </div>
@@ -19,8 +19,8 @@
         <span ng-bind="task.description" class="description" ng-class="{'task-completed' : task.completed}"></span>
         <span class="label label-default" ng-class="$ctrl.determinePriority(task)" ng-bind="task.priority"></span>
         <div class="task-mobile-buttons">
-          <button type="button" ng-click="task.completed = ! task.completed" class="btn btn-default task-complete-mobile">Complete</button>
-          <button type="button" ng-click="$ctrl.taskRemove(task)" class="btn btn-default pull-right">Delete</button>
+          <button type="button" ng-click="task.completed = ! task.completed" class="btn btn-primary task-complete-mobile" ng-bind="$ctrl.select_button(task)"></button>
+          <button type="button" ng-click="$ctrl.taskRemove(task)" class="btn btn-danger pull-right">Delete</button>
           <button type="button" ng-if="!task.completed" ng-click="task.editing = !task.editing" class="btn btn-default pull-right">Edit</button>
         </div>
       </div>
@@ -29,8 +29,9 @@
         <input ng-model="task.description" ng-keyup="$ctrl.acceptEdit(task, $event)">
         <select ng-model="task.priority" class="label" ng-class="$ctrl.determinePriority(task)">
           <option value="Low" class="label-success">Low</option>
-          <option value="High" class="label-danger">High</option>
+          <option value="High" class="label-warning">High</option>
         </select>
+        <button type="button" class="btn btn-success pull-right task-add-mobile ng-scope" ng-click="$ctrl.acceptEdit(task, $event)">Submit</button>
       </div>
       <button ng-if="task.editing" ng-click="$ctrl.acceptEdit(task, $event)" class="task-add"></button>
     </div>
