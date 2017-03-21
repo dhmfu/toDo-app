@@ -211,3 +211,7 @@ form.ng-dirty.ng-invalid .input-error{
   height: 28.5px;
   margin: auto 0;
 }
+
+.task-mobile-buttons, .task-add-mobile, .task-complete-mobile{
+  display: none;
+}

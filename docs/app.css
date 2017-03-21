@@ -11,7 +11,7 @@ body{
   width: 40%;
   margin: auto;
   margin-bottom: 40px;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -49,4 +49,16 @@ body{
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus{
   color: #f2f2f2;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #fff;
+}
+
+.navbar-default .navbar-toggle{
+  border-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+  background-color: #4cae4c;
 }
