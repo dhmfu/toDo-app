@@ -1,0 +1,17 @@
+@media screen and (max-device-width: 600px) {
+  body{
+    background-size: initial;
+  }
+
+  .content{
+      display: inline-block;
+      position: relative;
+      width: 80%;
+      margin: 0;
+      top: auto;
+      margin-left: 10%;
+    }
+  .background-switcher{
+    display: none;
+  }
+}
