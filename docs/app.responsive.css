@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 600px) {
+@media screen and (max-device-width: 767px) {
   body{
     background-size: initial;
   }
@@ -11,7 +11,67 @@
       top: auto;
       margin-left: 10%;
     }
+
   .background-switcher{
     display: none;
+  }
+
+  .task-details{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  form input{
+    padding-right: 0;
+  }
+
+  .input-error{
+    margin: 0;
+  }
+
+  form .label{
+    position: relative;
+  }
+
+  .task-description{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .task-description span.label{
+    position: relative;
+  }
+
+  .description{
+    margin-right: 0;
+  }
+
+  .task-mobile-buttons{
+    display: block;
+    margin-top: 5px;
+  }
+
+  .task-mobile-buttons button:last-child{
+    margin-right: 5px;
+  }
+
+  .task-add-mobile{
+    display: inline-block;
+    height: 28.5px;
+    padding: .2em .6em .3em;
+    font-weight: bold;
+    margin-top: 1px;
+  }
+
+  .task-add, .task-remove{
+    display: none;
+  }
+
+  .task-complete{
+    display: none;
+  }
+
+  .task-complete-mobile{
+    display: inline-block;
   }
 }

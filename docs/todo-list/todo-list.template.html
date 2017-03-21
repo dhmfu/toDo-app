@@ -6,6 +6,7 @@
         <option value="Low" class="label-success">Low</option>
         <option value="High" class="label-danger">High</option>
       </select>
+      <button type="submit" class="btn btn-success pull-right task-add-mobile" ng-if="$ctrl.newTask.description">Submit</button>
     </div>
     <button type="submit" ng-if="$ctrl.newTask.description" class="task-add"></button>
   </form>
@@ -17,6 +18,11 @@
       <div class="task-description" title="double-click to edit" ng-dblclick="!task.completed && (task.editing = !task.editing)" ng-if="!task.editing">
         <span ng-bind="task.description" class="description" ng-class="{'task-completed' : task.completed}"></span>
         <span class="label label-default" ng-class="$ctrl.determinePriority(task)" ng-bind="task.priority"></span>
+        <div class="task-mobile-buttons">
+          <button type="button" ng-click="task.completed = ! task.completed" class="btn btn-default task-complete-mobile">Complete</button>
+          <button type="button" ng-click="$ctrl.taskRemove(task)" class="btn btn-default pull-right">Delete</button>
+          <button type="button" ng-if="!task.completed" ng-click="task.editing = !task.editing" class="btn btn-default pull-right">Edit</button>
+        </div>
       </div>
       <span class="task-remove" ng-click="$ctrl.taskRemove(task)" ng-if="showRemove && !task.editing"></span>
       <div class="task-edit" ng-if="task.editing">
